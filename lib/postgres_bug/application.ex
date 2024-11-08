@@ -17,7 +17,8 @@ defmodule PostgresBug.Application do
       port: 5432,
       username: "root",
       password: "password",
-      database: "mydb"
+      database: "mydb",
+      parameters: [{:preferQueryMode, "simple" }]
     }]
 
     opts = [strategy: :one_for_one, name: My.PostgresSupervisor] # restart options for the supervisor, not relevant
