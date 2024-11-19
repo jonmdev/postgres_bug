@@ -18,7 +18,9 @@ defmodule PostgresBug.Application do
       username: "root",
       password: "password",
       database: "mydb",
-      parameters: [{:preferQueryMode, "simple" }]
+      show_sensitive_data_on_connection_error: true,
+      parameters: [{:preferQueryMode, "simple" }],
+
     }]
 
     opts = [strategy: :one_for_one, name: My.PostgresSupervisor] # restart options for the supervisor, not relevant
